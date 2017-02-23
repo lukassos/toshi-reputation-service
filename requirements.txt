@@ -1,0 +1,11 @@
+#PYTHON3
+redis==2.10.5
+asyncpg==0.8.4
+iso8061==0.1.11
+rq==0.7.1
+aiohttp==1.3.3
+-e git+ssh://git@github.com/tristan/ethutils.git#egg=ethutils
+-e git+ssh://git@github.com/tokenbrowser/tokenbrowser-python.git#egg=tokenbrowser
+-e git+git://github.com/tristan/asyncbb.git#egg=asyncbb
+-e git+git://github.com/tristan/asyncbb-eth.git#egg=asyncbb-eth
+-e git+ssh://git@github.com/tokenbrowser/token-services-lib.git#egg=token-services
