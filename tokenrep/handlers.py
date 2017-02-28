@@ -2,6 +2,7 @@ import iso8601
 from asyncbb.handlers import BaseHandler
 from asyncbb.database import DatabaseMixin
 from asyncbb.errors import JSONHTTPError
+from asyncbb.log import log
 from tokenservices.handlers import RequestVerificationMixin
 from tokenbrowser.utils import validate_address
 from decimal import Decimal, InvalidOperation
@@ -27,6 +28,11 @@ class UpdateUserMixin:
                 self.application.config['reputation']['push_url'],
                 self.application.config['reputation']['signing_key'],
                 user_address)
+        else:
+            log.warn("Not updating users: {}, {}, {}".format(
+                hasattr(self.application, 'q'),
+                'reputation' in self.application.config,
+                'push_url' in self.application.config['reputation'] if 'reputation' in self.application.config else None))
 
 class SubmitReviewHandler(RequestVerificationMixin, DatabaseMixin, UpdateUserMixin, BaseHandler):
 

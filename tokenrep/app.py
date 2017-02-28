@@ -31,7 +31,7 @@ class Application(asyncbb.web.Application):
 
 
 def main():
-    app = asyncbb.web.Application(urls)
+    app = Application(urls)
     conn = redis.from_url(app.config['redis']['url'])
     app.q = Queue(connection=conn)
     app.start()
