@@ -1,11 +1,11 @@
 import asyncpg.exceptions
 import iso8601
-from asyncbb.handlers import BaseHandler
-from asyncbb.database import DatabaseMixin
-from asyncbb.errors import JSONHTTPError
-from asyncbb.log import log
+from tokenservices.handlers import BaseHandler
+from tokenservices.database import DatabaseMixin
+from tokenservices.errors import JSONHTTPError
+from tokenservices.log import log
 from tokenservices.handlers import RequestVerificationMixin
-from tokenbrowser.utils import validate_address
+from tokenservices.utils import validate_address
 from decimal import Decimal, InvalidOperation
 from .tasks import update_user_reputation, calculate_user_reputation
 
