@@ -2,7 +2,7 @@ import asyncio
 import subprocess
 import os
 from functools import partial
-from tokenrep import locations
+from toshirep import locations
 
 def requires_geolite2_data(func=None):
     """runs the GeoLite2 import script before running the test"""

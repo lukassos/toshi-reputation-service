@@ -3,10 +3,10 @@ import random
 import iso8601
 from tornado.testing import gen_test
 from datetime import datetime, timedelta
-from tokenrep.app import urls
-from tokenservices.test.database import requires_database
-from tokenservices.test.base import AsyncHandlerTest
-from tokenservices.ethereum.utils import data_decoder, private_key_to_address
+from toshirep.app import urls
+from toshi.test.database import requires_database
+from toshi.test.base import AsyncHandlerTest
+from toshi.ethereum.utils import data_decoder, private_key_to_address
 from tornado.escape import json_decode
 import urllib.parse
 

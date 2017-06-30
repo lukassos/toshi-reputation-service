@@ -2,7 +2,7 @@ import asyncio
 import ipaddress
 import asyncpg.exceptions
 
-from tokenservices.log import log
+from toshi.log import log
 from tornado.httpclient import AsyncHTTPClient
 
 async def get_location_from_geolite2(pool, ip_addr):

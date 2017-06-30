@@ -7,12 +7,12 @@ import os
 import math
 import logging
 
-from tokenservices.ethereum.utils import private_key_to_address
-from tokenservices.request import sign_request
-from tokenservices.handlers import (
-    TOKEN_TIMESTAMP_HEADER,
-    TOKEN_SIGNATURE_HEADER,
-    TOKEN_ID_ADDRESS_HEADER)
+from toshi.ethereum.utils import private_key_to_address
+from toshi.request import sign_request
+from toshi.handlers import (
+    TOSHI_TIMESTAMP_HEADER,
+    TOSHI_SIGNATURE_HEADER,
+    TOSHI_ID_ADDRESS_HEADER)
 
 log = logging.getLogger('worker.log')
 
@@ -122,9 +122,9 @@ async def do_push(push_url, body, address, signing_key, reviewee_id):
                 async with session.post(push_url,
                                         headers={
                                             'content-type': 'application/json',
-                                            TOKEN_SIGNATURE_HEADER: signature,
-                                            TOKEN_ID_ADDRESS_HEADER: address,
-                                            TOKEN_TIMESTAMP_HEADER: str(timestamp)},
+                                            TOSHI_SIGNATURE_HEADER: signature,
+                                            TOSHI_ID_ADDRESS_HEADER: address,
+                                            TOSHI_TIMESTAMP_HEADER: str(timestamp)},
                                         data=body) as response:
                     if response.status == 204 or response.status == 200:
                         terminate = True

@@ -2,13 +2,13 @@ import asyncpg.exceptions
 import iso8601
 import ipaddress
 import os
-from tokenservices.analytics import AnalyticsMixin
-from tokenservices.handlers import BaseHandler
-from tokenservices.database import DatabaseMixin
-from tokenservices.errors import JSONHTTPError
-from tokenservices.log import log
-from tokenservices.handlers import RequestVerificationMixin
-from tokenservices.utils import validate_address
+from toshi.analytics import AnalyticsMixin
+from toshi.handlers import BaseHandler
+from toshi.database import DatabaseMixin
+from toshi.errors import JSONHTTPError
+from toshi.log import log
+from toshi.handlers import RequestVerificationMixin
+from toshi.utils import validate_address
 from tornado.ioloop import IOLoop
 from decimal import Decimal, InvalidOperation
 from .tasks import update_user_reputation, calculate_user_reputation

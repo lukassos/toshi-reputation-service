@@ -2,11 +2,11 @@ import os
 from tornado.escape import json_decode
 from tornado.testing import gen_test
 
-from tokenrep.app import urls
-from tokenrep.tasks import starsort
-from tokenservices.test.database import requires_database
-from tokenservices.test.base import AsyncHandlerTest
-from tokenservices.ethereum.utils import data_decoder, data_encoder, private_key_to_address
+from toshirep.app import urls
+from toshirep.tasks import starsort
+from toshi.test.database import requires_database
+from toshi.test.base import AsyncHandlerTest
+from toshi.ethereum.utils import data_decoder, data_encoder, private_key_to_address
 
 TEST_PRIVATE_KEY = data_decoder("0xe8f32e723decf4051aefac8e2c93c9c5b214313817cdb01a1494b917c8436b35")
 TEST_ADDRESS = "0x056db290f8ba3250ca64a45d16284d04bc6f5fbf"

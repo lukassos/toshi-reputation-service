@@ -1,8 +1,8 @@
 import os
 from . import locations
 from . import handlers
-import tokenservices.web
-from tokenservices.handlers import GenerateTimestamp
+import toshi.web
+from toshi.handlers import GenerateTimestamp
 from rq import Queue
 import redis
 from functools import partial
@@ -19,7 +19,7 @@ urls = [
     (r"^/v1/admin/reprocess/?$", handlers.ReprocessReviews)
 ]
 
-class Application(tokenservices.web.Application):
+class Application(toshi.web.Application):
 
     def process_config(self):
         config = super(Application, self).process_config()
