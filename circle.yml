@@ -33,3 +33,4 @@ deployment:
     branch: production
     commands:
       - git push -f git@heroku.com:token-rep-service.git $CIRCLE_SHA1:master
+      - git push -f git@heroku.com:toshi-reputation-service.git $CIRCLE_SHA1:master
